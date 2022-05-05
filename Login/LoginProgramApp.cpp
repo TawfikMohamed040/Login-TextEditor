@@ -2,7 +2,7 @@
 #include"LoginProgramFun.cpp"
 using namespace std;
 int main(){
-    // HiddenPassword();
+    HiddenPassword();
     // RepeatThePassword();
     // StrengthOfPassword();
 }

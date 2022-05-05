@@ -9,7 +9,7 @@
 
 // Rules of strong password should user enter
 
-    /*At least 12 characters (required for your Muhlenberg password)—the more characters, the better
+    /*At least 8 characters (required for your Muhlenberg password)—the more characters, the better
     A mixture of both uppercase and lowercase letters
     A mixture of letters and numbers 
     Inclusion of at least one special character, e.g., ! @ # ? ]*/ 
@@ -20,21 +20,27 @@
 using namespace std;
 void HiddenPassword(){
     char ch;
-    string pass;
+    string pass ,star="*";
     cout<<"Alhlan ya habibi\n";
     cout<<"please enter the password : ";
     ch=getch();
-    for(int i=0;i<20;i++){
+    for(int i=0;i<40;i++){
         if(ch!=13){
-            cout<<"*";
+            cout<<star;
             pass+=ch;
             ch=getch();
+            if(ch==8){
+                cout<<"\b\b";
+                pass.erase(std::prev(pass.end()));
+                ch=getch();
+            }
         }
         else{
             break;
         }
 
     }
+    cout<<endl<<pass<<endl;
     cout<<endl;
     if(pass=="tawfik"){
         cout<<"correct password\n";
@@ -53,7 +59,7 @@ void StrengthOfPassword(){
     while(IsValid){
         cout<<"Please Enter a strong password & more than 8 char : ";
         cin>>pass;
-        if(pass.length()>8){
+        if(pass.length()>=8){
             if(regex_search(pass,regex("[A-Z]+")))
                 strength+=10;
 
