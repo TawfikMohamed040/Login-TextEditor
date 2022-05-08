@@ -18,7 +18,7 @@ using namespace std;
 
 int main(){
     // NumOfWordInTheFile();
-    // NumOfchars();
+    NumOfchars();
     // NumOfLines();
     // CheckIfWordExist();
     // Merge();

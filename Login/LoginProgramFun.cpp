@@ -20,17 +20,17 @@
 using namespace std;
 void HiddenPassword(){
     char ch;
-    string pass ,star="*";
+    string pass ;
     cout<<"Alhlan ya habibi\n";
     cout<<"please enter the password : ";
     ch=getch();
     for(int i=0;i<40;i++){
         if(ch!=13){
-            cout<<star;
+            cout<<"*";
             pass+=ch;
             ch=getch();
             if(ch==8){
-                cout<<"\b\b";
+                cout<<"\b \b";
                 pass.erase(std::prev(pass.end()));
                 ch=getch();
             }

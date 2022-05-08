@@ -13,7 +13,7 @@
 #include<iostream>
 #include<fstream>
 #include<cctype>
-#include<vector>
+#include<regex>
 using namespace std;
 
 
@@ -39,8 +39,10 @@ void NumOfWordInTheFile(){
         cout << "Now reading information.\n";
     }
     while (!file.eof()) {
-        number+=1;
         file >> word;
+        if(regex_search(word,regex("[A-Za-z]+"))){
+            number+=1;
+        }
     }
     cout<<"The number of words is : "<<number<<" word"<<endl;
     file.close();
@@ -63,7 +65,7 @@ void NumOfchars(){
         file.get(ch);
         number+=1;
     }
-    cout<<"The number of character is : "<<number<<" char"<<endl;
+    cout<<"The number of character is : "<<number-1<<" char"<<endl;
     file.close();
     cout << "\nFile closed\n";
 
