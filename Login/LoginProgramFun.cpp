@@ -24,21 +24,19 @@ void HiddenPassword(){
     cout<<"Alhlan ya habibi\n";
     cout<<"please enter the password : ";
     ch=getch();
-    for(int i=0;i<40;i++){
-        if(ch!=13){
-            cout<<"*";
-            pass+=ch;
-            ch=getch();
-            if(ch==8){
+    for(int i=0;i<200;i++){
+        if(ch==8 && pass.length()>0){
                 cout<<"\b \b";
-                pass.erase(std::prev(pass.end()));
+                pass.pop_back();
+                ch=getch();
+        }
+        else{
+            if(ch!=13){
+                cout<<"*";
+                pass+=ch;
                 ch=getch();
             }
         }
-        else{
-            break;
-        }
-
     }
     cout<<endl<<pass<<endl;
     cout<<endl;
@@ -69,7 +67,7 @@ void StrengthOfPassword(){
             if(regex_search(pass,regex("[0-9]+")))
                 strength+=10;
 
-            if(regex_search(pass,regex("[!@#$%&*^*',.]+")))
+            if(regex_search(pass,regex("[~`""!@#$%^&*()-_+={}[]|;:<>,./?*/]+")))
                 strength+=10;
 
             IsValid=false;   

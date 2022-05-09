@@ -10,12 +10,7 @@
 // Date:     27 April 2022
 // Version: 1.0
 
-#include<iostream>
-#include<fstream>
-#include<cctype>
-#include<regex>
-using namespace std;
-
+#include"TextEditorFun.h"
 
 // __________________________________________________________
 string &capitalize(string &w){
