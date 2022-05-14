@@ -67,6 +67,7 @@ void StrengthOfPassword(){
     while(IsValid){
         cout<<"Please Enter a strong password & more than 8 char : ";
         cin>>pass;
+        
         if(pass.length()>=8){
             if(regex_search(pass,regex("[A-Z]+")))
                 strength+=10;
