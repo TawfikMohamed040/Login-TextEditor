@@ -14,19 +14,20 @@
 #include"TextEditorFun.h"
 
 int main(){
+    int choice;
     // string FILE;
-    fstream file;
-    cout<<"Ahlan ya user ya habibi\n";
-    cout<<"Please,enter the file name :";
-    cin>>f;    
-    file.open(f, ios::in);
-    if (file.fail()){
-        cout << "This is a new file. I created it for you" << endl;
-        file.open(f, ios::out);
-    }
-    else {
-        cout << "This File Already Exists";
-    }
+    // fstream file;
+    // cout<<"Ahlan ya user ya habibi\n";
+    // cout<<"Please,enter the file name :";
+    // cin>>f;    
+    // file.open(f, ios::in);
+    // if (file.fail()){
+    //     cout << "This is a new file. I created it for you" << endl;
+    //     file.open(f, ios::out);
+    // }
+    // else {
+    //     cout << "This File Already Exists";
+    // }
     // cout<<"\n1.Add new text to the end of the file\n2.Display the content of the file\n3.Empty the file";
     // cout<<"\n4.Encrypt the file content\n5.Decrypt the file content\n6.Merge another file";
     // cout<<"\n7.Count the number of words in the file.\n8.Count the number of characters in the file";
@@ -35,4 +36,20 @@ int main(){
     // cout<<"\n13.Turn the file content to lower case.\n14.Turn file content to 1st caps (1st char of each word is capital)";
     // cout<<"\n15.Save\n16.Exit";
     // cout<<"\nEnter your choice :";
+    // Mergetest();
+    // cout<<"1 for merge 2 for exit :";
+    // cin>>choice;
+    while(true){
+        cout<<"1 for merge 2 for exit :";
+        cin>>choice;
+        if(choice==1){
+            Mergetest();
+            // break;
+        }
+        else if(choice==2){
+            savefun();
+            break;
+        }    
+
+    }
 }

@@ -12,5 +12,10 @@ void NumOfLines();
 void CheckIfWordExist();
 void Merge();
 
-string f;
+
+
+void Mergetest();
+void savefun();
+
+string f,save;
 #endif

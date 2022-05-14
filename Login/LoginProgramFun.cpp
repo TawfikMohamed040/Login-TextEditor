@@ -24,11 +24,16 @@ void HiddenPassword(){
     cout<<"Alhlan ya habibi\n";
     cout<<"please enter the password : ";
     ch=getch();
-    for(int i=0;i<200;i++){
-        if(ch==8 && pass.length()>0){
+    bool Valid=true;
+    while(Valid){
+        if(ch==8 && pass.length()!=0){
                 cout<<"\b \b";
                 pass.pop_back();
                 ch=getch();
+        }
+        else if(ch==13){
+            Valid=false;
+            break;
         }
         else{
             if(ch!=13){

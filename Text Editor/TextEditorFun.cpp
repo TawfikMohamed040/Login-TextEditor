@@ -11,7 +11,8 @@
 // Version: 1.0
 
 #include"TextEditorFun.h"
-
+// << write
+// >> read
 // __________________________________________________________
 string &capitalize(string &w){
     for(int i=0;i<w.length();i++){
@@ -87,6 +88,7 @@ void NumOfLines(){
     cout << "\nFile closed. \n";
 }
 // _______________________________________________________________
+
 void CheckIfWordExist(){
     int num=0;
     string word;
@@ -119,22 +121,70 @@ void CheckIfWordExist(){
     cout << "\nFile closed. \n";
 }
 // ____________________________________________________________
-void Merge(){
-    string line;
-    fstream ifs,ofs;
-    ifs.open("file1.txt",ios::in);
-    ofs.open("file2.txt",ios::app);
-    if(ifs && ofs){
-        while (!ifs.eof())
-        {
-            getline(ifs,line);
-            ofs<<line<<"\n";
-        }
-        cout<<"....Merged Done....";
-    }
-    else{
-        cout<<"Error cant open the File";
-    }
-    ifs.close();
-    ofs.close();
-}
+// void Merge(){
+//     string line;
+//     fstream ifs,ofs;
+//     ifs.open("file1.txt",ios::in);
+//     ofs.open("file2.txt",ios::app);
+//     if(ifs && ofs){
+//         while (!ifs.eof())
+//         {
+//             getline(ifs,line);
+//             ofs<<line<<"\n";
+//         }
+//         cout<<"....Merged Done....";
+//     }
+//     else{
+//         cout<<"Error cant open the File";
+//     }
+//     ifs.close();
+//     ofs.close();
+// }
+
+
+
+
+
+
+
+
+
+
+
+// void Mergetest(){
+//     string line;
+//     fstream ifs,ofs;
+//     ifs.open("file1.txt",ios::in);
+//     ofs.open("file2.txt",ios::in);
+//     if(ifs && ofs){
+//         while (!ifs.eof())
+//         {
+//             getline(ifs,line);
+//             save+=line;
+//             // cout<<endl;
+//         }
+//         while (!ofs.eof())
+//         {
+//             getline(ofs,line);
+//             save+=line;
+//             // cout<<endl;
+//         }
+//         cout<<"....Merged Done....";
+//     }
+//     else{
+//         cout<<"Error cant open the File";
+//     }
+//     cout<<endl<<save<<endl;
+//     ifs.close();
+//     ofs.close();
+// }
+// void savefun(){
+//     fstream ofs;
+//     string line;
+//     ofs.open("file2.txt",ios::out);
+//     // while (!ofs.eof()){
+//         ofs<<save;
+//         cout<<endl;
+//     // }
+//     ofs.close();
+// }
