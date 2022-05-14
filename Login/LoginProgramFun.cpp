@@ -5,7 +5,7 @@
     a minimum of 1 numeric character [0-9] and
     a minimum of 1 special character: ~`!@#$%^&*()-_+={}[]|\;:"<>,./?*/
 
-// __________________________________________________________________________
+// _______________________________________________________________________________________________
 
 // Rules of strong password should user enter
 
@@ -13,10 +13,13 @@
     A mixture of both uppercase and lowercase letters
     A mixture of letters and numbers 
     Inclusion of at least one special character, e.g., ! @ # ? ]*/ 
-//____________________________________________________________________________ 
+//__________________________________________________________________________________________________
+
 #include<iostream>
 #include<conio.h>
 #include<regex>
+
+
 using namespace std;
 void HiddenPassword(){
     char ch;
@@ -54,14 +57,17 @@ void HiddenPassword(){
     }
     
 }
-// _________________________________________________________
+// ___________________________________________________________________________
+
 void StrengthOfPassword(){
+   
     string pass;
     int strength=0,b=0;
     bool IsValid=true;
     while(IsValid){
         cout<<"Please Enter a strong password & more than 8 char : ";
         cin>>pass;
+        
         if(pass.length()>=8){
             if(regex_search(pass,regex("[A-Z]+")))
                 strength+=10;
@@ -91,8 +97,10 @@ void StrengthOfPassword(){
         
 }
 
-// _________________________________________________________
+// ______________________________________________________________________
+
 void RepeatThePassword(){
+   
     string pass1,pass2;
     bool iscorrect=true;
 
