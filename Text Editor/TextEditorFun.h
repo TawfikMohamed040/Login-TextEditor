@@ -6,16 +6,17 @@
 #include<regex>
 using namespace std;
 
-void NumOfWordInTheFile();
-void NumOfchars();
-void NumOfLines();
-void CheckIfWordExist();
+void NumOfWordInTheFile(string Textfile);
+void NumOfchars(string Textfile);
+void NumOfLines(string Textfile);
+void CheckIfWordExist(string Textfile);
 void Merge();
+void press(int x);
 
 
 
 void Mergetest();
 void savefun();
 
-string f,save;
+string Textfile,save;
 #endif

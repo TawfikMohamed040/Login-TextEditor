@@ -13,6 +13,11 @@
 #include"TextEditorFun.h"
 // << write
 // >> read
+void press(int x){
+    cout<<"Enter any number to view the List again : ";
+    cin>>x;
+}
+
 // __________________________________________________________
 string &capitalize(string &w){
     for(int i=0;i<w.length();i++){
@@ -24,23 +29,25 @@ string &capitalize(string &w){
 }
 // __________________________________________________________
 
-void NumOfWordInTheFile(){
+void NumOfWordInTheFile(string filename){
     int number=0;
-    fstream file; string word;
-    file.open("TextEditor.txt", ios::in);
-    if (file.fail())
-        cout << "File open error!" << endl;
-    else {
-        cout << "File opened successful.\n";
-        cout << "Now reading information.\n";
-    }
+    fstream file; 
+    // string filename;
+    string word;
+    file.open(filename, ios::in);
+    // if (file.fail())
+    //     cout << "File open error!" << endl;
+    // else {
+    //     cout << "File opened successful.\n";
+    //     cout << "Now reading information.\n";
+    // }
     while (!file.eof()) {
         file >> word;
         if(regex_search(word,regex("[A-Za-z]+"))){
             number+=1;
         }
     }
-    cout<<"The number of words is : "<<number<<" word"<<endl;
+    cout<<"\nThe number of words is : "<<number<<" word"<<endl;
     file.close();
     cout << "\nFile closed\n";
 
