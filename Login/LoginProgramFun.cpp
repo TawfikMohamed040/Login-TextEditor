@@ -5,7 +5,7 @@
     a minimum of 1 numeric character [0-9] and
     a minimum of 1 special character: ~`!@#$%^&*()-_+={}[]|\;:"<>,./?*/
 
-// __________________________________________________________________________
+// _______________________________________________________________________________________________
 
 // Rules of strong password should user enter
 
@@ -13,7 +13,8 @@
     A mixture of both uppercase and lowercase letters
     A mixture of letters and numbers 
     Inclusion of at least one special character, e.g., ! @ # ? ]*/ 
-//____________________________________________________________________________ 
+//__________________________________________________________________________________________________
+
 #include<iostream>
 #include<conio.h>
 #include<regex>
@@ -54,7 +55,8 @@ void HiddenPassword(){
     }
     
 }
-// _________________________________________________________
+// ___________________________________________________________________________
+
 void StrengthOfPassword(){
     string pass;
     int strength=0,b=0;
@@ -91,7 +93,8 @@ void StrengthOfPassword(){
         
 }
 
-// _________________________________________________________
+// ______________________________________________________________________
+
 void RepeatThePassword(){
     string pass1,pass2;
     bool iscorrect=true;
