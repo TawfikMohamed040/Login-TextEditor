@@ -178,10 +178,15 @@ void Mergetest(){
 void savefun(){
     fstream ofs;
     // char line[150];
-    ofs.open("file2.txt",ios::out);
+    ofs.open("file3.txt",ios::out);
     // while (!ofs.eof()){
         for(int i=0;i<save.length();i++){
-            ofs<<save[i];
+            if(save[i]!="."){
+                ofs<<save[i];
+            }
+            else{
+                ofs<<"\n";   
+            }    
         }
     // }
     ofs.close();
