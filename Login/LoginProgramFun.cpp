@@ -18,6 +18,8 @@
 #include<iostream>
 #include<conio.h>
 #include<regex>
+
+
 using namespace std;
 void HiddenPassword(){
     char ch;
@@ -58,6 +60,7 @@ void HiddenPassword(){
 // ___________________________________________________________________________
 
 void StrengthOfPassword(){
+   
     string pass;
     int strength=0,b=0;
     bool IsValid=true;
@@ -96,6 +99,7 @@ void StrengthOfPassword(){
 // ______________________________________________________________________
 
 void RepeatThePassword(){
+   
     string pass1,pass2;
     bool iscorrect=true;
 
