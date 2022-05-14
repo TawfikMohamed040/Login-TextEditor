@@ -87,6 +87,7 @@ void NumOfLines(){
     file.close();
     cout << "\nFile closed. \n";
 }
+
 // _______________________________________________________________
 
 void CheckIfWordExist(){
