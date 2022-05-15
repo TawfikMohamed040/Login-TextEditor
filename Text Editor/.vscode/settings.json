@@ -7,6 +7,9 @@
         "fstream": "cpp",
         "ostream": "cpp",
         "string": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "algorithm": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp"
     }
 }

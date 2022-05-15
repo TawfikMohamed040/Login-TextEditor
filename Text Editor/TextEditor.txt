@@ -2,4 +2,4 @@ computer science is the study of computers and computing as well as their theore
 Computer science applies the principles of mathematics,
 engineering, and logic to a plethora of functions, 
 including algorithm formulation, software and hardware development, 
-and artificial intelligence.
+
