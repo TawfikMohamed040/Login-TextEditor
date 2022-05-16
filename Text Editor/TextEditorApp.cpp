@@ -104,7 +104,7 @@ int main(){
             press(stay);
         }
         else if(choice==15){
-            savefun();
+            SaveOutput(Textfile);
             press(stay);
         }
         else if(choice==16){

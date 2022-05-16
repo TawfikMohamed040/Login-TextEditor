@@ -35,7 +35,8 @@ void add_txt(string filename) {
         save+=added_txt;
         save+="\n";
     }
-
+    savefun(filename);
+    save="";
     fout.close();
 }
 //________________________________________________________________________________________________________________________________________
@@ -55,9 +56,12 @@ void view_encryption(string filename) {
         sentence.push_back('\n');
     }
     myfile.close();
-    for (int i=0; i < sentence.size(); i++)
+    for (int i=0; i < sentence.size(); i++){
     // save in a var called save to send to savefun() 
         save+=sentence[i];
+    }
+    savefun(filename);
+    save="";    
 }
 //_______________________________________________________________________________________________________________________________________
 
@@ -76,9 +80,12 @@ void Decrypt(string filename) {
         sentence.push_back('\n');
     }
     myfile.close();
-    for (int i = 0; i < sentence.size(); i++)
+    for (int i = 0; i < sentence.size(); i++){
     // save in a var called save to send to savefun() 
         save+=sentence[i];
+    }
+    savefun(filename);
+    save="";
 
 }
 //_______________________________________________________________________________________________________________________________________
@@ -103,6 +110,7 @@ void clear(string filename) {
     ofstream clear(filename);
     clear << "";
     clear.close();
+    cout << "\nclear Done!";
 }
 //_______________________________________________________________________________________________________________________________________
 
@@ -131,9 +139,11 @@ void NumOfWordInTheFile(string filename){
             number+=1;
         }
     }
+    
     cout<<"\nThe number of words is : "<<number<<" word"<<endl;
     file.close();
     cout << "\nFile closed\n";
+    cout << "\nDone!";
 
 }
 //_______________________________________________________________________________________________________________________________________
@@ -152,6 +162,7 @@ void NumOfchars(string filename){
     cout<<"The number of character is : "<<number-1<<" char"<<endl;
     file.close();
     cout << "\nFile closed\n";
+    cout << "\nDone!";
 
 }
 ///_______________________________________________________________________________________________________________________________________
@@ -171,6 +182,7 @@ void NumOfLines(string filename){
     cout<<"The number of lines in file is: "<<num<<" line\n";
     file.close();
     cout << "\nFile closed. \n";
+    cout << "\nDone!";
 }
 
 //_______________________________________________________________________________________________________________________________________
@@ -200,6 +212,7 @@ void CheckIfWordExist(string filename){
     if(c==0){
         cout<<"\nWord was not found in the file\n";
     }
+    
     file.close();
     cout << "\nFile closed. \n";
 }
@@ -235,6 +248,9 @@ void Merge(string filename){
     else{
         cout<<"Error cant open the File";
     }
+    savefun(filename);
+    save="";
+    cout << "\nDone!";
     ifs.close();
     ofs.close();
 }
@@ -264,6 +280,7 @@ void word_count(string filename)
     }
     cout<<"\nThe word you enterd found "<<num<<" times\n";
     file.close();
+    cout << "\nDone!";
 } 
 
 //_______________________________________________________________________________________________________________________________________
@@ -286,6 +303,9 @@ void toupper_function(string filename)
             save+=text;
         }
     }
+    savefun(filename);
+    save="";
+    cout << "\nDone!";
 }
 //_______________________________________________________________________________________________________________________________________
 
@@ -308,9 +328,13 @@ void tolower_function(string filename)
 
         }
     }
+    savefun(filename);
+    save="";
+    cout << "\nDone!";
 }
 //_______________________________________________________________________________________________________________________________________
 void first_letter_upper(string filename) {
+    int c=0;
     fstream text_file;
     text_file.open(filename);
     string words;
@@ -321,54 +345,53 @@ void first_letter_upper(string filename) {
         // first lower all word's char
         for (int j =0; j<=words.length(); j++)
         {
-
             words[j] = tolower(words[j]);
-
         }
         // second upper the first char of every word
         for (int j =0; j<=words.length(); j++)
         {
             words[0]= toupper(words[0]);
-
         }
         temp = words;
+        c+=1;
         // save in a var called save to send to savefun() 
-        save+=temp;
-        save+=' ';
+        if(c==15){
+            save+="\n";
+            c=0;
+        }
+        else{
+            save+=temp;
+            save+=' ';
+        }    
     }
+    savefun(filename);
+    save="";
     cout << "\nDone!";
 }
-
-
-// void first_letter_upper(string filename) {
-//     fstream text_file;
-//     text_file.open(filename);
-//     string words;
-//     string temp;
-//     while (!text_file.eof() ) {
-//         text_file >> words;
-//         for (int j =0; j<=words.length(); j++)
-//         {
-//             words[0]= toupper(words[0]);
-//         }
-//             temp = words;
-//             // save in a var called save to send to savefun() 
-//             save+=temp;
-            
-//     }
-//     cout << "\nDone! .. You can now see the final output at 'target.txt'!";
-// }
 //_______________________________________________________________________________________________________________________________________
 
-void savefun(){
-    cout<<"enter the name of the file you want to save in(file end wih .txt) : ";
-    cin>>targetfile;
+void savefun(string filename){
     fstream ofs;
     // open file in write mode
-    ofs.open(targetfile,ios::out);
+    ofs.open(filename,ios::out);
     for(int i=0;i<save.length();i++){
             ofs<<save[i];   
     }
-    cout<<"\nsaved Done";
     ofs.close();
 }
+void SaveOutput(string filename){
+    int z;
+    cout<<"\nTo save in the same file press 1\nTo save in another file press 2 \n";
+    cin>>z;
+    if(z==1){
+        cout<<"\nFile saved in "<<filename<<endl;
+    }
+    else if(z==2){
+        cout<<"\nEnter the Targetfile: ";
+        cin>>targetfile;
+        rename(filename.c_str(),targetfile.c_str());
+        cout<<"\nFile saved in "<<targetfile<<endl;
+    }
+
+}
+

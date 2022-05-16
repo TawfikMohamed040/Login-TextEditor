@@ -3,6 +3,7 @@
 #include<iostream>
 #include<fstream>
 #include<cctype>
+#include<cstdio>
 #include<regex>
 #include<vector>
 #include <algorithm>
@@ -26,7 +27,8 @@ void toupper_function(string filename);
 void tolower_function(string filename);
 void first_letter_upper(string filename);
 void press(int x);
-void savefun();
+void savefun(string filename);
+void SaveOutput(string filename);
 // ______________________________________
 
 string filename;
