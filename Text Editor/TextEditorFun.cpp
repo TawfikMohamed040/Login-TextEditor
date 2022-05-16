@@ -294,6 +294,7 @@ void toupper_function(string filename)
     // open file in read mode
     ifstream text_file;
     text_file.open(filename);
+  
     // check if the file opend
     if (text_file.is_open())
     {
@@ -303,6 +304,7 @@ void toupper_function(string filename)
         {
             temp = text_file.get();
             text = toupper(temp);
+          
             // save in a var called save to send to savefun() 
             save+=text;
         }
