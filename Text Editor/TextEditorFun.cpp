@@ -5,7 +5,7 @@
 /* Authors:     Tawfik Mohamed Khalil        id->20211024
                 Badr Nasr Al-Din Al-Badri    id->20210086
                 Yousef Abdallah Ahmed       id->20211117
-
+                
 */
 // Date:     27 April 2022
 // Version: 1.0
@@ -62,19 +62,22 @@ void view_encryption(string filename) {
         save+=sentence[i];
     }
     savefun(filename);
-    save="";    
+    save="";
+  
 }
 //_______________________________________________________________________________________________________________________________________
 
 void Decrypt(string filename) {
     string words;
     fstream myfile;
+  
     // open file in read mode
     myfile.open(filename, ios::in);
     vector<char> sentence;
     while (getline(myfile, words)) {
         for (int i = 0; i < words.length(); i++) {
             words[i] = (char)(words[i] - 1);
+          
             // save the decrypted char in vector
             sentence.push_back(words[i]);
         }
@@ -82,12 +85,12 @@ void Decrypt(string filename) {
     }
     myfile.close();
     for (int i = 0; i < sentence.size(); i++){
+      
     // save in a var called save to send to savefun() 
         save+=sentence[i];
     }
     savefun(filename);
     save="";
-
 }
 //_______________________________________________________________________________________________________________________________________
 
@@ -97,6 +100,7 @@ void view_txt(string filename) {
     // open file in read mode
     file.open(filename, ios::in);
     cout<<endl;
+  
     // loop on every line in the file to the end of it
     while (!file.eof()){
         getline(file, line);
@@ -147,7 +151,7 @@ void NumOfWordInTheFile(string filename){
     cout << "\nDone!";
 
 }
-//_______________________________________________________________________________________________________________________________________
+//______________________________________________________________________________________________________________________________________
 
 void NumOfchars(string filename){
     int number=0;
@@ -291,6 +295,7 @@ void toupper_function(string filename)
     // open file in read mode
     ifstream text_file;
     text_file.open(filename);
+  
     // check if the file opend
     if (text_file.is_open())
     {
@@ -300,6 +305,7 @@ void toupper_function(string filename)
         {
             temp = text_file.get();
             text = toupper(temp);
+          
             // save in a var called save to send to savefun() 
             save+=text;
         }
@@ -340,6 +346,7 @@ void first_letter_upper(string filename) {
     text_file.open(filename);
     string words;
     string temp;
+  
     // loop on every word in the file
     while (!text_file.eof()) {
         text_file >> words;
