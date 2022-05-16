@@ -343,6 +343,7 @@ void first_letter_upper(string filename) {
     text_file.open(filename);
     string words;
     string temp;
+  
     // loop on every word in the file
     while (!text_file.eof()) {
         text_file >> words;
