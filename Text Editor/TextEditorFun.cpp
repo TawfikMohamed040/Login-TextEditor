@@ -61,19 +61,22 @@ void view_encryption(string filename) {
         save+=sentence[i];
     }
     savefun(filename);
-    save="";    
+    save="";
+  
 }
 //_______________________________________________________________________________________________________________________________________
 
 void Decrypt(string filename) {
     string words;
     fstream myfile;
+  
     // open file in read mode
     myfile.open(filename, ios::in);
     vector<char> sentence;
     while (getline(myfile, words)) {
         for (int i = 0; i < words.length(); i++) {
             words[i] = (char)(words[i] - 1);
+          
             // save the decrypted char in vector
             sentence.push_back(words[i]);
         }
@@ -81,6 +84,7 @@ void Decrypt(string filename) {
     }
     myfile.close();
     for (int i = 0; i < sentence.size(); i++){
+      
     // save in a var called save to send to savefun() 
         save+=sentence[i];
     }
@@ -95,6 +99,7 @@ void view_txt(string filename) {
     // open file in read mode
     file.open(filename, ios::in);
     cout<<endl;
+  
     // loop on every line in the file to the end of it
     while (!file.eof()){
         getline(file, line);
