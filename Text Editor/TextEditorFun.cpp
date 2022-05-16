@@ -32,10 +32,11 @@ void add_txt(string filename) {
             break;
         }
         // save in a var called save to send to savefun() 
+        fout<<added_txt<<"\n";
         save+=added_txt;
         save+="\n";
     }
-    savefun(filename);
+  //  savefun(filename);
     save="";
     fout.close();
 }
@@ -324,7 +325,7 @@ void tolower_function(string filename)
             temp = text_file.get();
             text = tolower(temp);
             // save in a var called save to send to savefun() 
-            save+=temp;
+            save+=text;
 
         }
     }
@@ -380,17 +381,36 @@ void savefun(string filename){
     ofs.close();
 }
 void SaveOutput(string filename){
-    int z;
-    cout<<"\nTo save in the same file press 1\nTo save in another file press 2 \n";
-    cin>>z;
-    if(z==1){
-        cout<<"\nFile saved in "<<filename<<endl;
+    fstream ifs,ofs ;
+    string line;
+    string save2;
+    int cho;
+    ifs.open(filename,ios::in);
+    cout<<"If you want to save in the same file press 1\nIf another file press 2 :";
+    cin>>cho;
+    if(cho==1){
+        cout<<"Save Done in "<<filename;
     }
-    else if(z==2){
-        cout<<"\nEnter the Targetfile: ";
+    else if(cho==2){
+        cout<<"enter the name of the new file you want: ";
         cin>>targetfile;
-        rename(filename.c_str(),targetfile.c_str());
-        cout<<"\nFile saved in "<<targetfile<<endl;
+        ofs.open(targetfile,ios::out);
+        while (getline(ifs,line))
+        {
+           ofs<<line<<"\n";
+        }
+        
+        // while (!ifs.eof()) {
+        //     // calc num of lines
+        //     getline(ifs,line);
+        //     ifs>>line;
+        //     save2+=line;
+        //     save2+="\n";
+        // }
+        // for(int i=0;i<save2.length();i++){
+        //         ofs<<save2[i];   
+        // }
+        cout<<"\nsaved done";
     }
 
 }
